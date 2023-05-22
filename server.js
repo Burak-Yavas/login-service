@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 //import routes
 
 const authRoute = require("./routes/auth");
+const commentRoute = require("./routes/commentRoute");
+
 
 
 dotenv.config();
@@ -24,37 +26,11 @@ app.use(express.json())
 
 //Route Middlewares
 
+app.use("/api/comment", commentRoute);
 app.use("/api/user", authRoute);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.listen(3000, () => console.log("Server Up And Running"));
-
-
-
-
-
-
-
-
-
-
-
 
 
 // app.set("view-engine", "ejs")
